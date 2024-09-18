@@ -1,0 +1,27 @@
+body .sidebar .sidebar-brand-wrapper .sidebar-brand img, body .sidebar .sidebar-brand-wrapper .sidebar-brand.brand-logo-mini img{
+	width: auto;
+}
+body .sidebar .sidebar-brand-wrapper .sidebar-brand{
+	padding: 0px;
+	text-align: center;
+}
+body .page-link.current:hover {
+    color: ##8f5fe8;
+    background-color: #fff;
+    border-color: ##8f5fe8;
+}
+li.page-item {
+    float: right;
+}
+body .pagination{
+	display: inline-block;
+}
+body .page-link.current {
+    color: #fff;
+    background-color: #8f5fe8;
+    border-color: #8f5fe8;
+}
+label.error {
+    color: red;
+    font-style: italic;
+}

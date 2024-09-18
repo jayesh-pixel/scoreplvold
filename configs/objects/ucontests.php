@@ -1,0 +1,83 @@
+<?php
+	$objects['ucontests'] = array(
+		'meta' => array(
+			'access' => ($_SESSION[$session]['usertype'] == 'Administrator'),
+			'singular' => 'Contest Users',
+			'plural' => 'Contest Users',
+			'table' => 'my_teams',
+			'default_sort_field' => 'id',
+			'default_sort_order' => 'desc',
+			'add' => false,
+			'edit' => false,
+			'search' => true,
+			'details' => true,
+			'delete' => false,
+			'fullpage' => false,
+			'filter' => "deleted=0" . (intval($_REQUEST['id'])?" and cid='{$_REQUEST['id']}'":""),
+			'row_actions' => array(
+				array(
+					'link' => "{$server_url}manager/teams?id=ID",
+					'title' => 'Team Players',
+					'icon' => 'mdi mdi-account-multiple',
+					'text' => 'Team Players',
+				)
+			),
+		),
+		'fields' => array(
+			'cid' => array(
+				'displayname' => 'Contest',
+				'sort' => true,
+				'list' => true,
+				'edit' => false,
+				'search' => false,
+				'details' => true,
+				'input' => 'select',
+				'options' => DB3::findChildren('contests', "name", array(), "deleted=0"),
+				'assoc' => true,
+				'validation' => 'required',
+			),
+			'match_id' => array(
+				'displayname' => 'Match',
+				'sort' => true,
+				'list' => true,
+				'edit' => false,
+				'search' => false,
+				'details' => true,
+				'input' => 'select',
+				'options' => DB3::findChildren('matches', "title", array(), "deleted=0"),
+				'assoc' => true,
+				'validation' => 'required',
+			),
+			'userid' => array(
+				'displayname' => 'User',
+				'sort' => true,
+				'list' => true,
+				'edit' => false,
+				'search' => false,
+				'details' => true,
+				'input' => 'select',
+				'options' => DB3::findChildren('user', "name", array(), "deleted=0"),
+				'assoc' => true,
+				'validation' => 'required',
+			),
+			'name' => array(
+				'displayname' => 'Name',
+				'sort' => true,
+				'list' => true,
+				'edit' => false,
+				'search' => true,
+				'details' => true,
+				'validation' => 'required',
+			),
+			'total' => array(
+				'displayname' => 'Points',
+				'sort' => true,
+				'list' => true,
+				'edit' => false,
+				'search' => false,
+				'details' => true,
+				'validation' => 'required',
+			),
+		)
+	)
+?>

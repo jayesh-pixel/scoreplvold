@@ -1,0 +1,15 @@
+TimeStamp: 2020-09-01 12:36:33Page: /inc/login.php
+Query: slect u.* from vendors where 1=0 or (u.email='akashsutar176@gmail.com' or u.email like 'akashsutar176@gmail.com@%');
+Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'slect u.* from vendors where 1=0 or (u.email='akashsutar176@gmail.com' or u.emai' at line 1
+TimeStamp: 2020-09-01 12:37:06Page: /inc/login.php
+Query: slect u.* from vendors u where 1=0 or (u.email='akashsutar176@gmail.com' or u.email like 'akashsutar176@gmail.com@%');
+Error: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'slect u.* from vendors u where 1=0 or (u.email='akashsutar176@gmail.com' or u.em' at line 1
+TimeStamp: 2020-09-02 15:34:32Page: /inc/ajax.php?mode=accept_order
+Query: update orders set id='1' and accepted='0' and ostatus='Rejected';
+Error: Column 'id' cannot be null
+TimeStamp: 2020-09-04 16:50:37Page: /inc/ajax.php?mode=payout
+Query: update payout_requests set paid=1, pdate=CDATE() where id='1' and paid=0;
+Error: FUNCTION grocery.CDATE does not exist
+TimeStamp: 2020-09-04 16:50:43Page: /inc/ajax.php?mode=payout
+Query: update payout_requests set paid=1, pdate=CDATE() where id='1' and paid=0;
+Error: FUNCTION grocery.CDATE does not exist
